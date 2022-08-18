@@ -10,8 +10,8 @@ RUN apt-get install -y mariadb-server
 #RUN rm /etc/mysql/mariadb.conf.d/50-server.cnf
 COPY ./src/50-server.cnf /etc/mysql/mariadb.conf.d/
 
-RUN mkdir /var/run/mysqld/
-RUN chown mysql:mysql /var/run/mysqld/
+#RUN mkdir /var/run/mysqld/
+#RUN chown mysql:mysql /var/run/mysqld/
 
 COPY ./src/start.sh .
 RUN chmod 777 start.sh
