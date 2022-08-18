@@ -1,12 +1,10 @@
-#!/bin/sh
-
-sleep 10;
+sleep 20;
 if  [ ! -f /var/www/wordpress/wp-config.php ]; then
     wp core --allow-root download --force
     echo "Core Downloaded"
     sleep 5;
     while  [ ! -f /var/www/wordpress/wp-config.php ]; do
-        wp core config --allow-root --dbname=wordpress --dbuser=$DB_LOGIN --dbpass=$DB_PASS --dbhost=0.0.0.0:3306
+        wp core config --allow-root --dbname=wordpress --dbuser=$DB_LOGIN --dbpass=$DB_PASS --dbhost=mariadb:3306
     done
     echo "Creating Users"
     wp core install --allow-root --url='lmorgana.42.fr' --title='lmorgana Inception' --admin_user=$WP_USER1_LOGIN --admin_password=$WP_USER1_PASS  --admin_email="lmorgana@gmail.com" --path='/var/www/wordpress';
