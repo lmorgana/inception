@@ -20,6 +20,6 @@ RUN chmod 777 /var/www/wordpress/
 
 COPY ./src/start.sh .
 RUN chmod 777 /start.sh
-WORKDIR /var/www/wordpress
+#WORKDIR /var/www/wordpress
 
 ENTRYPOINT ["sh", "/start.sh"]
