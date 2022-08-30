@@ -4,7 +4,7 @@ services:
     container_name: mariadb
     restart: always
     volumes:
-      - ~/data/maria/:/var/lib/mysql
+      - db-volume:/var/lib/mysql
     environment:
       DB_LOGIN: "${DB_LOGIN}"
       DB_PASS: "${DB_PASS}"
@@ -23,7 +23,7 @@ services:
       - mariadb
     restart: always
     volumes:
-      - ~/data/wp:/var/www/wordpress
+      - wp-volume:/var/www/wordpress
     environment:
       WP_USER1_LOGIN: "${WP_USER1_LOGIN}"
       WP_USER1_PASS: "${WP_USER1_PASS}"
@@ -49,7 +49,7 @@ services:
       extra_hosts:
         - "lmorgana.42.fr:127.0.0.1"
       volumes:
-        - ~/data/wp:/var/www/wordpress
+        - wp-volume:/var/www/wordpress
       build:
         context: ./requirements/nginx
         dockerfile: Dockerfile
@@ -62,3 +62,17 @@ services:
 networks:
   some-net:
     driver: bridge
+
+volumes:
+  wp-volume:
+    driver: local
+    driver_opts:
+      type: ext4
+      o: bind
+      device: /home/${USER}/data/www
+  db-volume:
+    driver: local
+    driver_opts:
+      type: ext4
+      o: bind
+      device: /home/${USER}/data/db
