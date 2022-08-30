@@ -8,7 +8,7 @@ down:
 	@ cd $(SRCS) && docker-compose down;
 
 prepare:
-	@ cd $(SRCS)/requirements/tool && sudo sh startSystem.sh
+	@ cd $(SRCS)requirements/tool && sudo sh startSystem.sh
 
 clean:
 	@ cd $(SRCS) && docker-compose down && docker system prune ;
