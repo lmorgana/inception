@@ -65,14 +65,4 @@ networks:
 
 volumes:
   wp-volume:
-    driver: local
-    driver_opts:
-      type: ext4
-      o: bind
-      device: ~/data/wp
   db-volume:
-    driver: local
-    driver_opts:
-      type: ext4
-      o: bind
-      device: ~/data/maria
