@@ -1,5 +1,4 @@
 if [ ! -d "/var/lib/mysql/wordpress" ]; then
-    chown -R mysql /var/run/mysqld
     service mysql start
     echo "database start created"
     sleep 5
