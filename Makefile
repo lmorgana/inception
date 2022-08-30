@@ -1,4 +1,4 @@
-SRCS = ./srcs/
+SRCS = ./src/
 
 all: prepare up
 
