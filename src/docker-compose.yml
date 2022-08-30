@@ -69,10 +69,10 @@ volumes:
     driver_opts:
       type: ext4
       o: bind
-      device: /home/data/yep/www
+      device: ~/data/wp
   db-volume:
     driver: local
     driver_opts:
       type: ext4
       o: bind
-      device: /home/data/yep/db
+      device: ~/data/maria
