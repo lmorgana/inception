@@ -9,6 +9,6 @@ COPY src/start.sh .
 RUN chmod 777 start.sh
 
 RUN rm /etc/mysql/mariadb.conf.d/50-server.cnf
-COPY tools/50-server.cnf /etc/mysql/mariadb.conf.d
+COPY src/50-server.cnf /etc/mysql/mariadb.conf.d
 
 ENTRYPOINT ["sh", "/start.sh"]
