@@ -69,10 +69,10 @@ volumes:
     driver_opts:
       type: ext4
       o: bind
-      device: /home/data/www
+      device: /home/data/yep/www
   db-volume:
     driver: local
     driver_opts:
       type: ext4
       o: bind
-      device: /home/data/db
+      device: /home/data/yep/db
