@@ -1,5 +1,4 @@
 if [ ! -d "/var/lib/mysql/wordpress" ]; then
-    mysql_install_db
     service mysql start
     echo "database start created"
     sleep 5
