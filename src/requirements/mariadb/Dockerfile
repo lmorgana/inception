@@ -11,6 +11,4 @@ RUN chmod +x start.sh
 RUN rm /etc/mysql/mariadb.conf.d/50-server.cnf
 COPY src/50-server.cnf /etc/mysql/mariadb.conf.d
 
-RUN chown -R mysql /var/run/mysqld
-
 ENTRYPOINT ["sh", "/start.sh"]
