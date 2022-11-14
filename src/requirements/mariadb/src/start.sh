@@ -1,5 +1,7 @@
 if [ ! -d "/var/lib/mysql/wordpress" ]; then
-    service mysql start
+
+	mysql_install_db
+	service mysql start
     echo "database start created"
     sleep 5
     mysql -e "CREATE USER '${DB_LOGIN}'@'localhost' identified by '${DB_PASS}';"
